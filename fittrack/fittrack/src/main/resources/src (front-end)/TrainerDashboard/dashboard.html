@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Trainer Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../mainUI.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-custom">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="../../index.html">
+                <i class="fa-solid fa-dumbbell me-2"></i>Trainer Panel
+            </a>
+            <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="text-white mb-4">Manage Availability</h2>
+
+        <div class="card p-4 mb-5 shadow">
+            <h4 class="text-white mb-3"><i class="fa-solid fa-plus-circle"></i> Create New Slot</h4>
+            <form id="createSlotForm" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label text-white">Date & Start Time</label>
+                    <input type="datetime-local" class="form-control" id="slotStart" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label text-white">Duration (Minutes)</label>
+                    <select class="form-select" id="slotDuration">
+                        <option value="60" selected>60 min</option>
+                        <option value="30">30 min</option>
+                        <option value="90">90 min</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label text-white">Activity Type</label>
+                    <select class="form-select" id="activityType">
+                        <option value="Personal Training">Personal Training</option>
+                        <option value="CrossFit">CrossFit</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Pilates">Pilates</option>
+                    </select>
+                </div>
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-success w-100">Add Availability</button>
+                </div>
+            </form>
+        </div>
+
+        <h4 class="text-white">My Active Slots</h4>
+        <div id="loadingSpinner" class="text-center my-3" style="display: none;">
+            <div class="spinner-border text-success" role="status"></div>
+        </div>
+        
+        <div class="row g-4 mt-2" id="mySlotsContainer">
+            </div>
+    </div>
+
+    <div id="alertContainer" class="container fixed-top" style="top: 20px;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

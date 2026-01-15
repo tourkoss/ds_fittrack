@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - FitTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../mainUI.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark mb-4 shadow">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand mb-0 h1" style="text-decoration: none;">
+                <i class="fa-solid fa-person-running"></i> FitTrack <span class="text-primary">Trainee</span>
+            </a>
+            <button class="btn btn-outline-light btn-sm" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-white">Welcome back!</h2>
+                <p class="text-muted">Track your progress and reach your goals.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fa-solid fa-bullseye"></i> My Profile & Goals</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="profileForm">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Current Weight (kg)</label>
+                                <div class="input-group">
+                                    <input type="number" step="0.1" id="weightInput" class="form-control" placeholder="e.g. 75.5">
+                                    <span class="input-group-text">kg</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">My Fitness Goals</label>
+                                <textarea id="goalsInput" class="form-control" rows="5" placeholder="Describe your goals here (e.g., Lose 5kg, Run 5km in 25 mins)..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fa-solid fa-floppy-disk"></i> Update Profile
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                
+                <div class="card mb-4 shadow-sm border-0">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fa-solid fa-pen-to-square"></i> Log New Activity</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="logForm" class="row g-3 align-items-end">
+                            <div class="col-md-4">
+                                <label class="form-label fw-bold">Activity Type</label>
+                                <select id="logType" class="form-select">
+                                    <option value="Weight Check">Weight Check</option>
+                                    <option value="Running">Running</option>
+                                    <option value="Gym Workout">Gym Workout</option>
+                                    <option value="Cycling">Cycling</option>
+                                    <option value="Swimming">Swimming</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-label fw-bold">Result / Value</label>
+                                <input type="text" id="logValue" class="form-control" placeholder="e.g. 5km in 25min" required>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fa-solid fa-plus"></i> Add Log
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fa-solid fa-clock-rotate-left"></i> Recent History</h5>
+                        <button class="btn btn-sm btn-light" onclick="loadLogs()"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush" id="logsList" style="max-height: 400px; overflow-y: auto;">
+                            <li class="list-group-item text-center text-muted py-3">Loading data...</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+.section-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--divider-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    color: var(--text-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-color: var(--primary-color);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.card-text {
+    color: var(--disabled-text-color);
+}
+
+.details-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    border: 1px solid var(--divider-color);
+    color: var(--text-color);
+}
+
+.modal-header, .modal-footer {
+    border-color: var(--divider-color);
+}
+
+.modal-title {
+    color: #ffffff;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.form-label {
+    color: #ffffff;
+}
+
+.form-control {
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--divider-color);
+    color: #ffffff;
+}
+
+.progress {
+    background-color: #3b4455;
+}

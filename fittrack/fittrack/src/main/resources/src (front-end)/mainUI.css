@@ -1,0 +1,90 @@
+:root {
+    --background-color: #191b28;
+    --primary-color: #28a745; /* Green for Fitness */
+    --secondary-color: #ffc107; /* Warning/Action */
+    --divider-color: rgba(255, 255, 255, 0.15); /* Λίγο πιο εμφανές διαχωριστικό */
+    
+    --button-bg-color: #333d4b;
+    --buton-hover-color: #218838;
+    
+    /* ΑΛΛΑΓΗ 1: Κύριο κείμενο κάτασπρο */
+    --text-color: #ffffff; 
+    
+    --input-bg-color: #2e3a47;
+    --card-bg-color: #2a2f3d;
+    
+    /* ΑΛΛΑΓΗ 2: Το "αχνό" κείμενο να είναι ανοιχτό ασημί, όχι σκούρο γκρι */
+    --disabled-text-color: #ced4da; 
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: #11131d;
+    border-bottom: 1px solid var(--divider-color);
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--buton-hover-color);
+    border-color: var(--buton-hover-color);
+}
+
+.btn-outline-light {
+    color: var(--text-color);
+    border-color: var(--divider-color);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--input-bg-color);
+    color: #fff;
+}
+
+.btn-outline-light.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/* SOS: Override για να φαίνονται τα μικρά γράμματα (π.χ. ημερομηνίες/περιγραφές) */
+.text-muted {
+    color: var(--disabled-text-color) !important;
+}
+
+/* SOS: Τα γράμματα μέσα στα πεδία (Login/Register/Modals) να είναι άσπρα */
+input, select, textarea {
+    color: #ffffff !important;
+    background-color: var(--input-bg-color) !important;
+    border-color: var(--divider-color) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    background-color: #3b4b5b !important;
+    color: #ffffff !important;
+}
+
+::placeholder {
+    color: var(--disabled-text-color) !important;
+    opacity: 0.7;
+}

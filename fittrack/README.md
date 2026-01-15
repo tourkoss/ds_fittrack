@@ -19,7 +19,7 @@
 
 # ***COMMANDS [Frontend]***
     - Εντολές εκτέλεσης (Node.js Server)
-        - Ανοίξτε τερματικό στον φάκελο του Frontend.
+        - Ανοίξτε τερματικό στον φάκελο του Frontend [ds_fittrack\fittrack\fittrack\src\main\resources\src (front-end)].
         - npm init -y
         - npm install express
         - node serverInit.js
